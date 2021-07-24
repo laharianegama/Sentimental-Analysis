@@ -60,7 +60,7 @@ def get_hashtags(api, location):
         try:
             trends = api.trends_place(woeid)
         except:
-            print("API limit exceeded. Trying again in 1 hour.")
+            print("API limit exceeded. Trying again in 1 hour.(900 requests/15 minutes are allowed)")
             time.sleep(3605)
             trends = api.trends_place(woeid)
         # Filtering out only English tweets and hash symbols
